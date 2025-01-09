@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greeting with Fade-in Animation and Typewriting Style</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+
+        margin: 0;
+        width: 100vw;
+        object-fit: cover;
+        background-image: url(https://marketplace.canva.com/EAGBzF6JmJI/1/0/1600w/canva-brown-aesthetic-desktop-wallpaper-sxI5LG9hxlk.jpg);
+      }
+      .greeting {
+        font-size: 3rem;
+        color: #333;
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: 0.15em solid orange; /* The typewriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        animation: typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+      .greeting.fade-in {
+        opacity: 1;
+      }
+      @media (max-width: 600px) {
+        .greeting {
+          font-size: 2rem;
+        }
+      }
+      /* The typing effect */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      /* The typewriter cursor effect */
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: transparent;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div style="background-color: white; padding: 12px; border-radius: 8px">
+        <h1 style="font-size: 2rem">Hello Oun</h1>
+        <p id="greetingText">I know that you are feeling upset about today.</p>
+        <p>
+          Of course I know. I just want to make this year to be more special.
+        </p>
+        <p>I spent my day to build this for you.</p>
+      </div>
+      <div style="text-align: center; margin-top: 20px">
+        <a
+          href="heart.html"
+          style="
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 20px;
+            background-color: #b18f8b;
+            color: white;
+            cursor: pointer;
+          "
+        >
+          Okay let's check
+        </a>
+      </div>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+          document.getElementById("greetingText").classList.add("fade-in");
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
